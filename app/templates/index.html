@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerGraph</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-icon">CG</div>
+
+        <div>
+            <h1>CareerGraph</h1>
+            <p>Explore your career connections</p>
+        </div>
+    </div>
+
+    <div class="status">
+        <span class="status-dot"></span>
+        Graph Connected
+    </div>
+</header>
+
+
+<main class="container">
+
+    <section class="hero">
+        <div>
+            <span class="eyebrow">AI-READY CAREER EXPLORER</span>
+
+            <h2>
+                Discover where your
+                <span>skills</span>
+                can take you.
+            </h2>
+
+            <p>
+                Explore career paths, identify missing skills,
+                and discover technologies and projects connected
+                to your career goals.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="panel">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">PROFILE</span>
+                <h3>Select a candidate</h3>
+            </div>
+
+            <span id="userStatus" class="muted">
+                Loading users...
+            </span>
+        </div>
+
+        <div class="select-row">
+
+            <select id="userSelect">
+                <option value="">Select a user</option>
+            </select>
+
+            <button id="recommendButton">
+                Find Career Paths
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section id="recommendationsSection" class="panel hidden">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">RECOMMENDATIONS</span>
+                <h3>Career paths for you</h3>
+            </div>
+
+            <span id="recommendationCount" class="count-badge">
+                0 roles
+            </span>
+
+        </div>
+
+        <div id="recommendations" class="career-grid">
+        </div>
+
+    </section>
+
+
+    <section id="detailsSection" class="panel hidden">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">CAREER ANALYSIS</span>
+                <h3 id="selectedJobTitle">
+                    Select a career
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="analysis-grid">
+
+            <div class="analysis-card">
+
+                <div class="card-title">
+                    <span class="icon">⚡</span>
+                    Missing Skills
+                </div>
+
+                <div id="missingSkills">
+                    Select a career above to see skill gaps.
+                </div>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <div class="card-title">
+                    <span class="icon">🔗</span>
+                    Career Connections
+                </div>
+
+                <div id="careerPath">
+                    Select a career above to explore connected technologies and projects.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">EXPLORE</span>
+                <h3>Search the career graph</h3>
+            </div>
+
+        </div>
+
+        <div class="search-row">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search jobs, skills, technologies or projects..."
+            >
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+        <div id="searchResults" class="search-results">
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    CareerGraph · Powered by CognoDB
+</footer>
+
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
