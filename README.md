@@ -52,9 +52,14 @@ User
 
 The application uses graph traversal to discover these connections.
 
+### Demo Video
+
+[https://drive.google.com/file/d/1hwvG_SDIh0RwClHOxGLdiI4EUnV3ugGw/view?usp=sharing]
+
 ## Running the project
 
 Install dependencies:
 
 ```text
 pip install -r requirements.txt
+
